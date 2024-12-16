@@ -1,0 +1,14 @@
+.profilebar {
+
+ 
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  place-items:center end; /* Centrado vertical y estirado horizontal */
+  
+  border: solid 1px white;
+  row-gap: 20px;
+
+  }
+  

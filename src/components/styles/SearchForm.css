@@ -1,0 +1,11 @@
+.searchform{
+    border: solid 1px white;
+    width: 100%;
+    padding: 2px 6px 2px 6px;
+}
+
+.searchform form{
+ 
+    display: flex;
+    flex-direction: column;
+}

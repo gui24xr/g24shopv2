@@ -1,0 +1,21 @@
+  
+   
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(97, 48, 161);
+  color:whitesmoke;
+}
+
+.navbar-sup {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    
+    gap: 10px;
+}
+
+
+        
+    

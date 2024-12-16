@@ -1,0 +1,24 @@
+.address-card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    cursor: pointer; /* Cambia el cursor para indicar que es seleccionable */
+    transition: transform 0.2s;
+}
+
+.address-card:hover {
+    transform: scale(1.02); /* Efecto de hover */
+}
+
+.address-card h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+
+.address-card p {
+    margin: 3px 0;
+    font-size: 0.9em;
+}

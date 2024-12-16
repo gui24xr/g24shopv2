@@ -1,0 +1,58 @@
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
+const containerStyle = {
+  width: '400px',
+  height: '400px'
+};
+
+const center = {
+  lat: -3.745, // Coordenadas iniciales
+  lng: -38.523
+};
+
+const MapComponent = () => {
+  const [address, setAddress] = useState('');
+  const [location, setLocation] = useState(center);
+
+  useEffect(()=>{
+    console.log('Direaccion Marcada: ', location)
+  },[location])
+  const handleInputChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const handleSearch = async () => {
+    const geocoder = new window.google.maps.Geocoder();
+    geocoder.geocode({ address }, (results, status) => {
+      if (status === 'OK') {
+        const latLng = results[0].geometry.location;
+        console.log('Resultado: ',results)
+        setLocation({ lat: latLng.lat(), lng: latLng.lng() });
+      } else {
+        console.error('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  };
+
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyDynWu5J0GQ-uY2k5gvgg3rFTidaLe2rWk">
+      <input
+        type="text"
+        value={address}
+        onChange={handleInputChange}
+        placeholder="Introduce una dirección"
+      />
+      <button onClick={handleSearch}>Buscar</button>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={location}
+        zoom={10}
+      >
+        <Marker position={location} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+
+export default MapComponent;

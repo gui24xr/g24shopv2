@@ -1,0 +1,8 @@
+.product-container-wrap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+
+    
+}
